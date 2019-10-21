@@ -1,5 +1,7 @@
 import Alien from './Alien.js'
 import Box from './Box.js'
+import KickableBox from './KickableBox.js'
+import BigBlockingBox from './BigBlockingBox.js'
 
 class AlienWalk {
   constructor () {
@@ -14,7 +16,9 @@ class AlienWalk {
     const alien = new Alien()
     this.sprites = []
     this.sprites.push(alien)
+    this.sprites.push(new BigBlockingBox(alien))
     this.sprites.push(new Box(alien))
+    this.sprites.push(new KickableBox(alien))
   }
 
   newFrame () {
